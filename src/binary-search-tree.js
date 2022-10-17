@@ -92,17 +92,16 @@ class BinarySearchTree {
       return;
     }
 
-    const minNodeFromRight = this._minFrom(target.right);
-    target.data = minNodeFromRight.data;
-    
-    this.remove(minNodeFromRight.data);
+    ({ data: data } = this._minFrom(target.right))
+    this.remove(data);
+    target.data = data;
   }
 
   min() {
     let target = this._root;
     while(target) {
       if (!target.left) {
-        return target;
+        return target.data;
       }
 
       target = target.left;
@@ -115,7 +114,7 @@ class BinarySearchTree {
     let target = this._root;
     while(target) {
       if (!target.right) {
-        return target;
+        return target.data;
       }
 
       target = target.right;

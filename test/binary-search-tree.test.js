@@ -108,16 +108,17 @@ describe('Binary search tree', () => {
       tree.add(1);
       tree.remove(14);
       tree.remove(8);
-      // tree.remove(9);
+      tree.remove(9);
       assert.strictEqual(tree.has(14), false);
-      assert.strictEqual(tree.has(8), false); console.log(tree.find(9))
-      // assert.strictEqual(tree.has(9), false);
+      assert.strictEqual(tree.has(8), false);
+      assert.strictEqual(tree.has(9), false);
       assert.strictEqual(tree.has(2), true);
       assert.strictEqual(tree.has(6), true);
       assert.strictEqual(tree.has(128), true);
       assert.strictEqual(tree.has(31), true);
       assert.strictEqual(tree.has(54), true);
       assert.strictEqual(tree.has(1), true);
+      
     });
 
     it.optional('min works correctly', () => {
